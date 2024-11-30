@@ -8,7 +8,7 @@ const ResultsPage = () => {
   const percentage = Math.round((score / totalQuestions) * 100);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-primary-black text-primary-yellow">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primary-black text-primary-yellow font-luckiest">
       <div className="p-8 bg-primary-yellow text-primary-black rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center">Quiz Results</h1>
         <p className="mt-4 text-lg text-center">

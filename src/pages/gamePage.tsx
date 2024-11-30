@@ -7,7 +7,7 @@ const GamePage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [imageIndex, setImageIndex] = useState(0); // For rotating images
+  const [imageIndex, setImageIndex] = useState(0);
 
   const navigate = useNavigate();
 
@@ -21,9 +21,6 @@ const GamePage = () => {
     'images/Screenshot 2024-11-25 at 7.13.56 PM.png',
     'images/Screenshot 2024-11-25 at 7.14.10 PM.png',
     'images/Screenshot 2024-11-25 at 7.14.39 PM.png',
-
-
-
   ];
 
   useEffect(() => {
@@ -44,7 +41,7 @@ const GamePage = () => {
   const currentQuestion = questions?.[currentQuestionIndex];
 
   const handleAnswerSelect = (option: string) => {
-    if (selectedAnswer) return; // Prevent multiple selections
+    if (selectedAnswer) return;
     setSelectedAnswer(option);
 
     if (currentQuestion && option === currentQuestion[currentQuestion.correctAnswer]) {
@@ -54,7 +51,7 @@ const GamePage = () => {
 
   const nextQuestion = () => {
     setSelectedAnswer(null);
-    setImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Rotate images
+    setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     if (currentQuestionIndex + 1 < (questions?.length || 0)) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
@@ -63,11 +60,11 @@ const GamePage = () => {
   };
 
   if (error) {
-    return <div className="text-center text-primary-yellow">{error}</div>;
+    return <div className="text-center text-primary-yellow font-luckiest">{error}</div>;
   }
 
   if (!questions) {
-    return <div className="text-center text-primary-yellow">Loading...</div>;
+    return <div className="text-center text-primary-yellow font-luckiest">Loading...</div>;
   }
 
   return (
@@ -80,7 +77,7 @@ const GamePage = () => {
       />
 
       {/* Score in the top-right corner */}
-      <div className="absolute top-4 right-4 text-xl font-bold">
+      <div className="absolute top-4 right-4 text-xl font-bold font-luckiest">
         Score: {score}
       </div>
 
@@ -89,22 +86,22 @@ const GamePage = () => {
         <img
           src={images[imageIndex]}
           alt="Car"
-          className="w-full h-48 object-contain mb-4" // Adjust size and margin
+          className="w-full h-48 object-contain mb-4"
         />
 
-        <h1 className="text-xl font-bold text-center">{currentQuestion?.question}</h1>
-        <ul className="mt-4 space-y-2">
+        <h1 className="text-xl font-bold text-center font-luckiest">{currentQuestion?.question}</h1>
+        <ul className="mt-4 space-y-2 font-luckiest">
           {['answerA', 'answerB', 'answerC', 'answerD'].map((key) => (
             <li
               key={key}
               className={`px-4 py-2 rounded cursor-pointer transition-all ${
                 selectedAnswer
                   ? currentQuestion[currentQuestion.correctAnswer] === currentQuestion[key]
-                    ? 'bg-primary-green text-white' // Correct answer (highlighted after selection)
+                    ? 'bg-primary-green text-white'
                     : selectedAnswer === currentQuestion[key]
-                    ? 'bg-primary-red text-white' // Incorrect answer
-                    : 'bg-gray-200' // Unselected option after selection
-                  : 'bg-gray-200 hover:bg-gray-300' // Default state before selection
+                    ? 'bg-primary-red text-white'
+                    : 'bg-gray-200'
+                  : 'bg-gray-200 hover:bg-gray-300'
               }`}
               onClick={() => handleAnswerSelect(currentQuestion[key])}
             >
@@ -113,9 +110,9 @@ const GamePage = () => {
           ))}
         </ul>
         <button
-          className="mt-6 px-6 py-2 w-full bg-primary-black text-primary-yellow rounded hover:bg-yellow-600"
+          className="mt-6 px-6 py-2 w-full bg-primary-black text-primary-yellow rounded hover:bg-yellow-600 font-luckiest"
           onClick={nextQuestion}
-          disabled={!selectedAnswer} // Disable button until an answer is selected
+          disabled={!selectedAnswer}
         >
           {currentQuestionIndex + 1 < (questions?.length || 0) ? 'Next Question' : 'View Results'}
         </button>

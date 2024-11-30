@@ -1,9 +1,11 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],  // Content paths
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'], // Content paths
   theme: {
     extend: {
+      fontFamily: {
+        luckiest: ['Luckiest Guy', 'sans-serif'], // Add the Luckiest Guy font
+      },
       colors: {
         primary: {
           black: '#121212', // Faded black
@@ -13,7 +15,7 @@ module.exports = {
         },
       },
       spacing: {
-        '42': '170px',  // Custom spacing for 170px
+        '42': '170px', // Custom spacing for 170px
       },
     },
   },
