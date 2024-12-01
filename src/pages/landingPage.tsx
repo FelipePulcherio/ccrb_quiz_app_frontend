@@ -61,11 +61,6 @@ export default function LandingPage(): JSX.Element {
   }, []);
 
   return (
-    // <>
-    //   <div>LANDING PAGE</div>
-    //   <LoginModal />
-    //   <button onClick={() => navigate('/game')}>Play</button>
-    // </>
     <div className="landing-page">
       {/* Music */}
       <audio ref={audioRef} autoPlay loop>
