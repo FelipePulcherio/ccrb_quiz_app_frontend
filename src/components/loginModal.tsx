@@ -128,7 +128,7 @@ export default function LoginModal(): JSX.Element {
   
   return (
     <>
-    <button className="loginButton" onClick={() => {setIsOpen(true); cleanData(); setModalPage('login')}}>Login</button>
+    <button className="loginButton font-luckiest w-full bg-white text-black font-bold text-[1.2rem] px-[1.5rem] py-[1rem] rounded-lg text-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#E0E0E0] hover:scale-105 hover:duration-200 hover:transform " onClick={() => {setIsOpen(true); cleanData(); setModalPage('login')}}>Login</button>
       {isOpen && 
           <div 
             className="loginModal w-screen h-screen absolute top-0 left-0 right-0 bg-black bg-opacity-25 flex flex-col items-center justify-center" 
