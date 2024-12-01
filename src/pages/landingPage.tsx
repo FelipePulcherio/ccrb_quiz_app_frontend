@@ -35,6 +35,23 @@ export default function LandingPage(): JSX.Element {
   const time = currentTime ? currentTime.toLocaleTimeString() : "";
 
   useEffect(() => {
+    const handlePlayAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.play().catch((err) => {
+          console.warn("Audio autoplay blocked. User interaction required.", err);
+        });
+      }
+    };
+
+    // Add event listener to ensure autoplay after user interaction
+    document.addEventListener("click", handlePlayAudio, { once: true });
+
+    return () => {
+      document.removeEventListener("click", handlePlayAudio);
+    };
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
       setCurrentTime(now);

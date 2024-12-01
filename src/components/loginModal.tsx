@@ -190,7 +190,7 @@ export default function LoginModal(): JSX.Element {
                     >
                       Login
                     </button>
-                    <div className="w-full text-sm mb-5">
+                    <div className="text-black w-full text-sm mb-5">
                       {"Don't have an account? "}
                       <span 
                         className="text-blue-500 cursor-pointer hover:underline" 
@@ -286,7 +286,7 @@ export default function LoginModal(): JSX.Element {
                       >
                         Create Account
                       </button>
-                      <div className="w-full text-sm mb-5">
+                      <div className="text-black w-full text-sm mb-5">
                         {"Already have an account? "}
                         <span 
                           className="text-blue-500 cursor-pointer hover:underline" 
