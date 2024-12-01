@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = (userInfo: Player) => {
     setIsLoggedIn(true);
     setUser(userInfo);
+    console.log(userInfo);
   };
 
   const logout = () => {

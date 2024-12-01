@@ -10,6 +10,7 @@ import Car5 from '../images/car5.png';
 import Car6 from '../images/car6.png';
 import Car7 from '../images/car7.png';
 import Car8 from '../images/car8.png';
+import Logo from '../images/most_wanted.png';
 
 const GamePage = () => {
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -72,7 +73,7 @@ const GamePage = () => {
     <div className="flex items-center justify-center min-h-screen bg-primary-black text-primary-yellow relative">
       {/* Top-left image (static) */}
       <img
-        src="images/most_wanted.png"
+        src={Logo}
         alt="Quiz Logo"
         className="absolute top-4 left-4 h-42 w-42 object-contain"
       />
