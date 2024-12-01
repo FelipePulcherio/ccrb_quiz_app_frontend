@@ -1,5 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Question } from '../types/types';
+
+import Car1 from '../images/car1.png';
+import Car2 from '../images/car2.png';
+import Car3 from '../images/car3.png';
+import Car4 from '../images/car4.png';
+import Car5 from '../images/car5.png';
+import Car6 from '../images/car6.png';
+import Car7 from '../images/car7.png';
+import Car8 from '../images/car8.png';
 
 const GamePage = () => {
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -12,16 +22,7 @@ const GamePage = () => {
   const navigate = useNavigate();
 
   // Array of image URLs for rotation inside the container
-  const images = [
-    'images/82450445_9969450.png',
-    'images/82450446_9969250.png',
-    'images/82450450_9969599.png',
-    'images/Screenshot 2024-11-25 at 7.07.33 PM.png',
-    'images/Screenshot 2024-11-25 at 7.11.46 PM.png',
-    'images/Screenshot 2024-11-25 at 7.13.56 PM.png',
-    'images/Screenshot 2024-11-25 at 7.14.10 PM.png',
-    'images/Screenshot 2024-11-25 at 7.14.39 PM.png',
-  ];
+  const images = [ Car1, Car2, Car3, Car4, Car5, Car6, Car7, Car8 ];
 
   useEffect(() => {
     const fetchQuestions = async () => {
